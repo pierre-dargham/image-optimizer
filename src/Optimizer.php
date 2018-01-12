@@ -12,6 +12,15 @@ interface Optimizer
     public function binaryName(): string;
 
     /**
+     * Set the name of the binary to be executed.
+     *
+     * @param string $binaryName
+     *
+     * @return $this
+     */
+    public function setBinaryName(string $binaryName);
+
+    /**
      * Determines if the given image can be handled by the optimizer.
      *
      * @param \Spatie\ImageOptimizer\Image $image

@@ -10,14 +10,25 @@ abstract class BaseOptimizer implements Optimizer
 
     public $imagePath = '';
 
-    public function __construct($options = [])
+    public function __construct($options = [], $binaryName = false)
     {
         $this->setOptions($options);
+
+        if (false !== $binaryName) {
+            $this->setBinaryName($binaryName);
+        }
     }
 
     public function binaryName(): string
     {
         return $this->binaryName;
+    }
+
+    public function setBinaryName(string $binaryName)
+    {
+        $this->binaryName = $binaryName;
+
+        return $this;
     }
 
     public function setImagePath(string $imagePath)
